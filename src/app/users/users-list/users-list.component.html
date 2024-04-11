@@ -1,0 +1,40 @@
+<section id="addnewItem">
+    <div class="row  pt-5 pb-2">
+      <div class="col-8">
+        <h2>Users Table Details</h2>
+        <p>You Can check all details</p>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col">Id</th>
+          <th class="col">Email</th>
+          <th class="col">First name</th>
+          <th class="col">Last name</th>
+          <th class="col">Avatar</th>
+          <th class="col text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr>
+        <tr *ngFor="let user of tableData">
+          <td>{{user.id}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td >
+                <img  [src]="user.avatar" class=" imgUser " alt="">
+          </td>
+          <td (click)="openViewUserDialog(user)"class="text-center pointer"><i class="fa-solid fa-eye"></i></td>
+        </tr>
+      </tbody>
+      
+  
+    </table>
+    <mat-paginator [length]="totalCount" [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions" (page)="handlePageEvent($event)"
+    aria-label="Select page">
+    </mat-paginator>

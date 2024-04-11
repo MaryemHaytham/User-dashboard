@@ -1,0 +1,17 @@
+<section class="container py-3 ">
+
+    <a class="text-end d-block myPointer" (click)="onNoClick()"><i class="fa-regular fa-2x fa-circle-xmark text-danger"></i></a>
+
+    <div class="text-center w-100"  id="userDetails">
+        <div class="picture">
+            <img [src]="data.avatar" class="w-25" alt="">
+        </div>
+        
+        <h3>{{data.email}}</h3>
+        <p>{{data.first_name}} {{data.last_name}}</p>
+        <hr>
+    </div>
+    <div class="text-end">
+        <button class="btn outline-main" [mat-dialog-close]="data.id"><span class="me-2"><i class="fa-solid fa-heart"></i></span>Close</button>
+    </div>
+</section>
